@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block subtitle %}{{ blog.name }}{% endblock %}
+
+{% block blog %}
+    {% if user.is_authenticated %}
+        <div class="admin-bar">
+            <div class="options">
+                <a href="/">Settings</a>
+                <a href="/">Log Out</a>
+            </div>
+        </div>
+    {% endif %}
+
+    <header>
+        <div class="site-title">
+            <span class="blog-name">{{ blog.name }}</span>
+            <img class="blog-list-dropdown-arrow"
+                 src="{% static 'icons/arrow_down.svg' %}"
+                 alt="Arrow down icon">
+            <ul class="blog-list-dropdown" style="display: none;">
+                {% for blog in blogs %}
+                    <li>
+                        <a href="{% url 'post_list' path=blog.path %}">{{ blog }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <nav>
+            <a href="{% url 'post_list' path=blog.path %}">All Posts</a>
+            {% if user.is_authenticated %}
+                <button>New Post</button>
+            {% else %}
+                <button>Sign Up</button>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% block blog_content %}
+        {% endblock blog_content %}
+    </main>
+{% endblock blog %}

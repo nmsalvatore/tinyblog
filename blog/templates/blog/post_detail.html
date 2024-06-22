@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block subtitle %}{{ post.title }}{% endblock %}
+
+{% block blog_content %}
+    <article>
+        <h1 class="title">{{ post.title }}</h1>
+        <div class="content">{{ post.body|linebreaks }}</div>
+    </article>
+{% endblock blog_content %}

@@ -1,0 +1,159 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --space-xs: 0.625rem;
+    --space-sm: 1.25rem;
+    --space-md: 2.5rem;
+    --space-lg: 3.75rem;
+    --space-xl: 5rem;
+
+    --color-background: #fafbfd;
+    --color-primary: #243342;
+    --color-secondary: #243342cc;
+    --color-border: #24334226;
+    --color-link: #476685;
+}
+
+body {
+    font-family: Inter, "Helvetica Neue", Helvetica, sans-serif;
+    background: var(--color-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: var(--color-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+ul,
+li {
+    line-height: 1.7;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: var(--color-secondary);
+}
+
+span {
+    color: var(--color-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+header,
+main,
+footer {
+    max-width: 720px;
+    margin: var(--space-lg) auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    div > .blog-name {
+        font-weight: 500;
+        font-size: 1.1rem;
+        cursor: default;
+        color: var(--color-secondary);
+    }
+
+    nav > a {
+        margin-right: 2rem;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        background: var(--color-primary);
+        color: var(--color-background);
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        border: none;
+        border-radius: 0.25rem;
+    }
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-title {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.site-title > img {
+    height: 1.5rem;
+    margin-left: 0.25rem;
+    cursor: pointer;
+}
+
+.site-title > a {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.site-title ul {
+    position: absolute;
+    top: 2.5rem;
+    background: var(--color-background);
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px -6px;
+    width: 240px;
+}
+
+.post-body {
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.admin-bar {
+    width: 100%;
+    background: var(--color-primary);
+    padding: 0.75rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        color: var(--color-background);
+        margin-right: 1rem;
+        text-decoration: none;
+    }
+
+    a:last-child {
+        margin-right: 0;
+    }
+}
