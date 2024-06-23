@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block subtitle %}{{ blog.name }}{% endblock %}
+{% block title %}
+    {{ blog.name }}
+{% endblock title %}
 
 {% block blog %}
-    {% if user.is_authenticated %}
-        <div class="admin-bar">
+    <div class="admin-bar">
+        <span class="site-title">TinyBlog</span>
+        {% if user.is_authenticated %}
             <div class="options">
                 <a href="/">Settings</a>
                 <a href="/">Log Out</a>
             </div>
-        </div>
-    {% endif %}
-
+        {% endif %}
+    </div>
     <header>
-        <div class="site-title">
+        <div>
             <span class="blog-name">{{ blog.name }}</span>
             <img class="blog-list-dropdown-arrow"
                  src="{% static 'icons/arrow_down.svg' %}"
@@ -29,8 +31,8 @@
         </div>
         <nav>
             <a href="{% url 'post_list' path=blog.path %}">All Posts</a>
-            {% if user.is_authenticated %}
-                <button>New Post</button>
+            {% if user.is_authenticated and user == blog.author %}
+                <a class="btn" href="{% url 'post_new' path=blog.path %}">New Post</a>
             {% else %}
                 <button>Sign Up</button>
             {% endif %}
@@ -41,4 +43,7 @@
         {% block blog_content %}
         {% endblock blog_content %}
     </main>
+    <footer>
+        <small>© 2024 Carbon Blog. All rights reserved.</small>
+    </footer>
 {% endblock blog %}

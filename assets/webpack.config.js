@@ -4,6 +4,8 @@ module.exports = {
     mode: "development",
     entry: {
         app: "./js/app.js",
+        tiptap: "./js/tiptap.js",
+        hljs: "./js/hljs.js",
     },
     output: {
         filename: "[name].bundle.js",

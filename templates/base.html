@@ -6,10 +6,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        {% block scripts %}
-        {% endblock scripts %}
+        {% block head_content %}
+        {% endblock head_content %}
         <script src="{% static 'js/app.bundle.js' %}" defer></script>
-        <title>Carbon |
+        <title>
+            {% block title %}
+            {% endblock title %}
+            |
             {% block subtitle %}
             {% endblock subtitle %}
         </title>

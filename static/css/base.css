@@ -80,11 +80,12 @@ header {
         color: var(--color-secondary);
     }
 
-    nav > a {
+    nav > a:first-child {
         margin-right: 2rem;
     }
 
-    button {
+    button,
+    .btn {
         padding: 0.5rem 1rem;
         background: var(--color-primary);
         color: var(--color-background);
@@ -96,10 +97,21 @@ header {
     }
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+footer {
+    color: var(--color-secondary);
+}
+
 h1 {
     font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1;
 }
 
 ul li {
@@ -107,24 +119,52 @@ ul li {
     justify-content: space-between;
 }
 
-.site-title {
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button[type="submit"] {
+    background: var(--color-link);
+    color: var(--color-background);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    margin-top: 3rem;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.edit-options {
+    align-self: flex-end;
+    margin-top: 3rem;
+
+    a:first-child {
+        margin-right: 2rem;
+    }
+}
+
+header > div {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.site-title > img {
+header > div > img {
     height: 1.5rem;
     margin-left: 0.25rem;
     cursor: pointer;
 }
 
-.site-title > a {
+header > div > a {
     font-size: 1.1rem;
     font-weight: 500;
 }
 
-.site-title ul {
+header > div ul {
     position: absolute;
     top: 2.5rem;
     background: var(--color-background);
@@ -145,15 +185,36 @@ ul li {
     background: var(--color-primary);
     padding: 0.75rem 2rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    box-shadow: 0px 1px 8px -6px;
 
     a {
         color: var(--color-background);
-        margin-right: 1rem;
+        margin-right: 2rem;
         text-decoration: none;
     }
 
     a:last-child {
         margin-right: 0;
     }
+}
+
+.site-title {
+    color: #fff;
+    font-weight: 600;
+}
+
+#id_title {
+    background: var(--color-background);
+    border: none;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+#id_title:focus {
+    outline: none;
 }

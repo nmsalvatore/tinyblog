@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block subtitle %}New Post{% endblock %}
+
+{% block head_content %}
+    <link rel="stylesheet" href="{% static 'css/tiptap.css' %}">
+    <script src="{% static 'js/tiptap.bundle.js' %}"></script>
+{% endblock head_content %}
+
+{% block blog_content %}
+    <form id="new_post_form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="tiptap-editor"></div>
+        <input type="hidden" name="content" id="tiptap_content">
+        <button type="submit">Publish</button>
+    </form>
+{% endblock blog_content %}

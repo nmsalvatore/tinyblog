@@ -15,7 +15,7 @@
   \*******************/
 /***/ (() => {
 
-eval("const dropdownArrow = document.querySelector(\".blog-list-dropdown-arrow\");\nconst dropdown = document.querySelector(\".blog-list-dropdown\");\n\ndocument.addEventListener(\"click\", (e) => {\n    if (e.target === dropdownArrow) {\n        if (dropdown.style.display === \"none\") {\n            dropdown.style.display = \"block\";\n        } else {\n            dropdown.style.display = \"none\";\n        }\n    } else if (e.target.parentElement !== dropdown) {\n        dropdown.style.display = \"none\";\n    }\n});\n\n\n//# sourceURL=webpack://assets/./js/app.js?");
+eval("const dropdownArrow = document.querySelector(\".blog-list-dropdown-arrow\");\nconst dropdown = document.querySelector(\".blog-list-dropdown\");\n\ndocument.addEventListener(\"click\", (e) => {\n    if (e.target === dropdownArrow) {\n        if (dropdown.style.display === \"none\") {\n            dropdown.style.display = \"block\";\n        } else {\n            dropdown.style.display = \"none\";\n        }\n    } else if (e.target !== dropdown || e.target.parentElement !== dropdown) {\n        dropdown.style.display = \"none\";\n    }\n});\n\n\n//# sourceURL=webpack://assets/./js/app.js?");
 
 /***/ })
 

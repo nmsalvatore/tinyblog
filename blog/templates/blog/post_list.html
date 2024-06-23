@@ -1,14 +1,16 @@
 {% extends 'blog/base.html' %}
 
+{% block subtitle %}
+    Home
+{% endblock subtitle %}
+
 {% block blog_content %}
-    <main>
-        {% for post in posts %}
-            <ul>
-                <li>
-                    <a href="{% url 'post_detail' slug=post.slug path=blog.path %}">{{ post.title }}</a>
-                    <span>{{ post.created_on|date:'m/d/Y' }}</span>
-                </li>
-            </ul>
-        {% endfor %}
-    </main>
+    {% for post in posts %}
+        <ul>
+            <li>
+                <a href="{% url 'post_detail' slug=post.slug path=blog.path %}">{{ post.title }}</a>
+                <span>{{ post.created_on|date:'m/d/Y' }}</span>
+            </li>
+        </ul>
+    {% endfor %}
 {% endblock blog_content %}
