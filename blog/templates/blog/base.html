@@ -6,15 +6,6 @@
 {% endblock title %}
 
 {% block blog %}
-    <div class="admin-bar">
-        <span class="site-title">TinyBlog</span>
-        {% if user.is_authenticated %}
-            <div class="options">
-                <a href="/">Settings</a>
-                <a href="/">Log Out</a>
-            </div>
-        {% endif %}
-    </div>
     <header>
         <div>
             <span class="blog-name">{{ blog.name }}</span>
@@ -32,9 +23,7 @@
         <nav>
             <a href="{% url 'post_list' path=blog.path %}">All Posts</a>
             {% if user.is_authenticated and user == blog.author %}
-                <a class="btn" href="{% url 'post_new' path=blog.path %}">New Post</a>
-            {% else %}
-                <button>Sign Up</button>
+                <a href="{% url 'post_new' path=blog.path %}">New Post</a>
             {% endif %}
         </nav>
     </header>
@@ -43,7 +32,8 @@
         {% block blog_content %}
         {% endblock blog_content %}
     </main>
+
     <footer>
-        <small>© 2024 Carbon Blog. All rights reserved.</small>
+        <small>© 2024 Whisp. All rights reserved.</small>
     </footer>
 {% endblock blog %}

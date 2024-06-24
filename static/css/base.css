@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+MX:wght@100..400&display=swap");
+
 * {
     padding: 0;
     margin: 0;
@@ -19,20 +21,9 @@
 }
 
 body {
-    font-family: Inter, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Lato, cursive;
     background: var(--color-background);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 h1,
@@ -41,16 +32,36 @@ h3,
 h4,
 h5,
 h6,
-a,
-p,
-ul,
-li {
-    line-height: 1.7;
+button,
+input,
+textarea {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: var(--color-primary);
 }
 
-p {
-    margin-bottom: 1.5rem;
-    color: var(--color-secondary);
+article .content,
+.tiptap-editor {
+    line-height: 1.7;
+
+    p:not(li p):not(blockquote p) {
+        margin-bottom: var(--space-sm);
+    }
+
+    ul,
+    ol {
+        margin-left: var(--space-md);
+
+        li {
+            display: list-item;
+        }
+    }
+
+    ul:not(ul ul),
+    ol:not(ol ol) {
+        margin-bottom: var(--space-sm);
+    }
 }
 
 span {
@@ -75,13 +86,17 @@ header {
 
     div > .blog-name {
         font-weight: 500;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         cursor: default;
         color: var(--color-secondary);
     }
 
-    nav > a:first-child {
-        margin-right: 2rem;
+    nav > a {
+        margin-right: var(--space-md);
+    }
+
+    nav > a:last-child {
+        margin-right: 0;
     }
 
     button,
@@ -108,15 +123,39 @@ footer {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: var(--space-md);
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-md);
     line-height: 1;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-sm);
 }
 
-ul li {
-    display: flex;
-    justify-content: space-between;
+h2 {
+    font-size: var(--space-sm);
+    font-weight: 600;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--space-xs);
+}
+
+blockquote {
+    border-left: 2px solid var(--color-border);
+    padding-left: var(--space-sm);
+    margin: var(--space-md) 0;
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 1rem;
+}
+
+ul {
+    line-height: 1.7;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 form {
@@ -127,23 +166,23 @@ form {
 button[type="submit"] {
     background: var(--color-link);
     color: var(--color-background);
-    padding: 0.5rem 1rem;
+    padding: var(--space-xs) var(--space-sm);
     border: none;
     border-radius: 0.25rem;
     font-size: inherit;
     font-family: inherit;
     font-weight: inherit;
-    margin-top: 3rem;
+    margin-top: var(--space-md);
     align-self: flex-end;
     cursor: pointer;
 }
 
 .edit-options {
     align-self: flex-end;
-    margin-top: 3rem;
+    margin-top: var(--space-md);
 
     a:first-child {
-        margin-right: 2rem;
+        margin-right: var(--space-md);
     }
 }
 
@@ -154,8 +193,8 @@ header > div {
 }
 
 header > div > img {
-    height: 1.5rem;
-    margin-left: 0.25rem;
+    height: var(--space-sm);
+    margin-left: var(--space-xs);
     cursor: pointer;
 }
 
@@ -166,55 +205,84 @@ header > div > a {
 
 header > div ul {
     position: absolute;
-    top: 2.5rem;
-    background: var(--color-background);
-    padding: 1rem;
+    top: var(--space-md);
+    background: #fff;
+    padding: var(--space-sm) 1.6rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
     box-shadow: 1px 1px 8px -6px;
     width: 240px;
 }
 
-.post-body {
-    margin-bottom: 2rem;
-    line-height: 1.5;
-}
-
-.admin-bar {
+.top-bar {
+    position: sticky;
+    top: 0;
     width: 100%;
     background: var(--color-primary);
-    padding: 0.75rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 60px;
+    line-height: 60px;
     box-shadow: 0px 1px 8px -6px;
+
+    .container {
+        width: 720px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     a {
         color: var(--color-background);
-        margin-right: 2rem;
+        margin-right: var(--space-md);
         text-decoration: none;
+        opacity: 0.8;
     }
 
     a:last-child {
         margin-right: 0;
     }
+
+    button.sign-up {
+        background: coral;
+        color: white;
+        border: none;
+        border-radius: 0.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+        width: 72px;
+    }
 }
 
 .site-title {
     color: #fff;
-    font-weight: 600;
+    font-family: "Playwrite MX";
 }
 
 #id_title {
     background: var(--color-background);
     border: none;
-    font-size: 3rem;
+    font-size: var(--space-md);
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+    line-height: 1;
 }
 
 #id_title:focus {
     outline: none;
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    header {
+        margin-top: var(--space-md);
+
+        nav > a:first-child {
+            margin-right: var(--space-sm);
+        }
+    }
 }

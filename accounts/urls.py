@@ -1,5 +1,6 @@
-from django.urls import path, include
+from django.urls import path
+from .views import logout_view
 
 urlpatterns = [
-    path("", include("django.contrib.auth.urls")),
+    path("logout/", logout_view, name="logout"),
 ]

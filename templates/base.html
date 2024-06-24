@@ -18,6 +18,19 @@
         </title>
     </head>
     <body>
+        <div class="top-bar">
+            <div class="container">
+                <span class="site-title">whisp</span>
+                {% if user.is_authenticated %}
+                    <div class="options">
+                        <a href="/">Settings</a>
+                        <a href="{% url 'logout' %}">Log Out</a>
+                    </div>
+                {% else %}
+                    <button class="sign-up">Sign up</button>
+                {% endif %}
+            </div>
+        </div>
         {% block blog %}
         {% endblock blog %}
     </body>

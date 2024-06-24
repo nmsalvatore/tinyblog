@@ -5,12 +5,12 @@
 {% endblock subtitle %}
 
 {% block blog_content %}
-    {% for post in posts %}
-        <ul>
+    <ul>
+        {% for post in posts %}
             <li>
                 <a href="{% url 'post_detail' slug=post.slug path=blog.path %}">{{ post.title }}</a>
                 <span>{{ post.created_on|date:'m/d/Y' }}</span>
             </li>
-        </ul>
-    {% endfor %}
+        {% endfor %}
+    </ul>
 {% endblock blog_content %}
