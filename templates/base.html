@@ -5,6 +5,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% block head_content %}
         {% endblock head_content %}
@@ -18,19 +19,14 @@
         </title>
     </head>
     <body>
-        <div class="top-bar">
-            <div class="container">
-                <span class="site-title">whisp</span>
-                {% if user.is_authenticated %}
-                    <div class="options">
-                        <a href="/">Settings</a>
-                        <a href="{% url 'logout' %}">Log Out</a>
-                    </div>
-                {% else %}
-                    <button class="sign-up">Sign up</button>
-                {% endif %}
+        {% if user.is_authenticated %}
+            <div class="top-bar">
+                <div class="options">
+                    <a href="/">Settings</a>
+                    <a href="{% url 'logout' %}">Log Out</a>
+                </div>
             </div>
-        </div>
+        {% endif %}
         {% block blog %}
         {% endblock blog %}
     </body>

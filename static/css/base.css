@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+MX:wght@100..400&display=swap");
-
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +11,7 @@
     --space-lg: 3.75rem;
     --space-xl: 5rem;
 
-    --color-background: #fafbfd;
+    --color-background: #fff;
     --color-primary: #243342;
     --color-secondary: #243342cc;
     --color-border: #24334226;
@@ -21,7 +19,7 @@
 }
 
 body {
-    font-family: Lato, cursive;
+    font-family: "IBM Plex Mono", monospace;
     background: var(--color-background);
     color: var(--color-secondary);
 }
@@ -78,7 +76,7 @@ main,
 footer {
     max-width: calc(720px + var(--space-md));
     padding: 0 var(--space-sm);
-    margin: var(--space-lg) auto;
+    margin: var(--space-xl) auto;
 }
 
 header {
@@ -86,10 +84,10 @@ header {
     justify-content: space-between;
 
     div > .blog-name {
-        font-weight: 500;
-        font-size: 1.2rem;
+        font-weight: 700;
+        font-size: 1.25rem;
         cursor: default;
-        color: var(--color-secondary);
+        color: var(--color-primary);
     }
 
     nav > a {
@@ -125,20 +123,16 @@ footer {
 
 h1 {
     font-size: var(--space-md);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: var(--space-md);
     line-height: 1;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-sm);
 }
 
 h2 {
     font-size: var(--space-sm);
-    font-weight: 600;
+    font-weight: 700;
     margin-top: var(--space-md);
     margin-bottom: var(--space-sm);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--space-xs);
 }
 
 blockquote {
@@ -266,7 +260,7 @@ header > div ul {
     background: var(--color-background);
     border: none;
     font-size: var(--space-md);
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: var(--space-md);
     line-height: 1;
 }

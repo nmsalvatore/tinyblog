@@ -23,7 +23,9 @@
         <nav>
             <a href="{% url 'post_list' path=blog.path %}">All Posts</a>
             {% if user.is_authenticated and user == blog.author %}
-                <a href="{% url 'post_new' path=blog.path %}">New Post</a>
+                <a class="btn" href="{% url 'post_new' path=blog.path %}">New Post</a>
+            {% else %}
+                <a class="btn" href="/">Sign up</a>
             {% endif %}
         </nav>
     </header>
@@ -34,6 +36,6 @@
     </main>
 
     <footer>
-        <small>© 2024 Whisp. All rights reserved.</small>
+        <small>© 2024 Tiny Blog. All rights reserved.</small>
     </footer>
 {% endblock blog %}
