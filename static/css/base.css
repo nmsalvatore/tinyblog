@@ -62,10 +62,6 @@ article .content,
     }
 }
 
-span {
-    color: var(--color-secondary);
-}
-
 a {
     text-decoration: none;
     color: var(--color-link);
@@ -82,11 +78,11 @@ footer {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     div > .blog-name {
         font-weight: 700;
         font-size: 1.25rem;
-        cursor: default;
         color: var(--color-primary);
     }
 
@@ -151,6 +147,10 @@ ul {
         display: flex;
         justify-content: space-between;
     }
+
+    li:not(.content li) {
+        margin-bottom: var(--space-xs);
+    }
 }
 
 form {
@@ -201,11 +201,8 @@ header > div > a {
 header > div ul {
     position: absolute;
     top: var(--space-md);
-    background: #fff;
-    padding: var(--space-sm) 1.6rem;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    box-shadow: 1px 1px 8px -6px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: var(--space-sm) 0;
     width: 240px;
 }
 
@@ -214,21 +211,14 @@ header > div ul {
     top: 0;
     width: 100%;
     background: var(--color-primary);
-    height: 60px;
-    line-height: 60px;
-    box-shadow: 0px 1px 8px -6px;
-
-    .container {
-        max-width: calc(720px + var(--space-md));
-        padding: 0 var(--space-sm);
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    color: var(--color-background);
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: space-between;
 
     a {
-        color: var(--color-background);
+        color: inherit;
         margin-right: var(--space-md);
         text-decoration: none;
         opacity: 0.8;

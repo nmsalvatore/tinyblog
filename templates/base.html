@@ -21,6 +21,7 @@
     <body>
         {% if user.is_authenticated %}
             <div class="top-bar">
+                <span>{{ user }}</span>
                 <div class="options">
                     <a href="/">Settings</a>
                     <a href="{% url 'logout' %}">Log Out</a>
