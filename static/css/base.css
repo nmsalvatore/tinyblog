@@ -236,6 +236,7 @@ header > div ul {
     font-weight: 700;
     margin-bottom: var(--space-md);
     line-height: 1;
+    width: 100%;
 }
 
 #id_title:focus {
