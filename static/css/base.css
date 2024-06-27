@@ -159,14 +159,9 @@ form {
 }
 
 button[type="submit"] {
-    background: var(--color-link);
-    color: var(--color-background);
-    padding: var(--space-xs) var(--space-sm);
+    background: none;
     border: none;
-    border-radius: 0.25rem;
-    font-size: inherit;
-    font-family: inherit;
-    font-weight: inherit;
+    color: var(--color-link);
     margin-top: var(--space-md);
     align-self: flex-end;
     cursor: pointer;
@@ -212,7 +207,7 @@ header > div ul {
     width: 100%;
     background: var(--color-primary);
     color: var(--color-background);
-    padding: 1rem 2rem;
+    padding: var(--space-sm);
     font-size: 0.75rem;
     display: flex;
     justify-content: space-between;
@@ -226,18 +221,6 @@ header > div ul {
 
     a:last-child {
         margin-right: 0;
-    }
-
-    button.sign-up {
-        background: coral;
-        color: white;
-        border: none;
-        border-radius: 0.25rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 32px;
-        width: 72px;
     }
 }
 
@@ -266,9 +249,9 @@ header > div ul {
 
     header {
         margin-top: var(--space-md);
+    }
 
-        nav > a:first-child {
-            margin-right: var(--space-sm);
-        }
+    .top-bar {
+        padding: var(--space-sm);
     }
 }
