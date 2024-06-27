@@ -2,10 +2,14 @@ pre {
     background: rgba(0, 0, 0, 0.03);
     padding: var(--space-sm);
     margin: var(--space-md) 0;
-    border-radius: 0.25rem;
     color: var(--color-secondary);
 
     span {
         color: var(--color-secondary);
     }
+}
+
+code:not(pre code) {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 0.25rem;
 }
