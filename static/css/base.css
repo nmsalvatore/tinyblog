@@ -41,7 +41,9 @@ textarea {
 
 article .content {
     margin-top: var(--space-md);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
 }
 
 article .content,
@@ -65,6 +67,10 @@ article .content,
     ol:not(ol ol) {
         margin-bottom: var(--space-sm);
     }
+}
+
+article .content > p:last-child {
+    margin-bottom: 0;
 }
 
 a {
