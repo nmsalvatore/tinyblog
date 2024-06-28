@@ -41,6 +41,7 @@ textarea {
 
 article .content {
     margin-top: var(--space-md);
+    margin-bottom: var(--space-lg);
 }
 
 article .content,
@@ -111,6 +112,11 @@ header {
     }
 }
 
+small {
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -124,7 +130,7 @@ footer {
 h1 {
     font-size: var(--space-md);
     font-weight: 700;
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
     line-height: 1.2;
 }
 
@@ -172,7 +178,7 @@ button[type="submit"] {
 
 .edit-options {
     align-self: flex-end;
-    margin-top: var(--space-md);
+    margin-top: var(--space-lg);
 
     a:first-child {
         margin-right: var(--space-md);

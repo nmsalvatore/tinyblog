@@ -12,8 +12,9 @@
 {% block blog_content %}
     <article>
         <h1 class="title">{{ post.title }}</h1>
-        <small>Published {{ post.created_on }}</small>
         <div class="content">{{ post.body|safe }}</div>
+        <small>Published {{ post.created_on }}</small>
+        {% if post.created_on != post.updated_on %}<small>Last updated on {{ post.updated_on }}</small>{% endif %}
     </article>
     {% if user.is_authenticated and user == blog.author %}
         <div class="edit-options">
