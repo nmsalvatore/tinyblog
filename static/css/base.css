@@ -270,6 +270,12 @@ header > div ul {
         font-size: 0.9rem;
     }
 
+    header,
+    main,
+    footer {
+        margin: var(--space-lg) auto;
+    }
+
     header {
         margin-top: var(--space-md);
     }
