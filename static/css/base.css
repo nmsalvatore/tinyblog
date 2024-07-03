@@ -22,6 +22,7 @@ body {
     font-family: "IBM Plex Mono", monospace;
     background: var(--color-background);
     color: var(--color-secondary);
+    padding-top: 5rem;
 }
 
 strong,
@@ -230,10 +231,22 @@ header > div ul {
 }
 
 .top-bar {
-    font-size: 0.9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: var(--space-xl) auto;
+    align-items: center;
+    font-size: 0.9rem;
+    background: var(--color-primary);
+    color: white;
+    padding: 0 var(--space-sm);
+
+    .logo {
+        color: inherit;
+    }
 
     a {
         color: inherit;
@@ -276,14 +289,7 @@ header > div ul {
         margin: var(--space-lg) auto;
     }
 
-    header {
-        margin-top: var(--space-md);
-    }
-
     .top-bar {
-        padding: var(--space-sm);
-        margin: var(--space-xs) auto;
-
         a {
             margin-right: var(--space-sm);
         }
