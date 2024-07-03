@@ -13,21 +13,21 @@
         <title>
             {% block title %}
             {% endblock title %}
-            |
+            -
             {% block subtitle %}
             {% endblock subtitle %}
         </title>
     </head>
     <body>
-        {% if user.is_authenticated %}
-            <div class="top-bar">
-                <span>{{ user }}</span>
-                <div class="options">
+        <div class="container top-bar">
+            <span class="logo">mumble.</span>
+            <div class="options">
+                {% if user.is_authenticated %}
                     <a href="/">Settings</a>
                     <a href="{% url 'logout' %}">Log Out</a>
-                </div>
+                {% endif %}
             </div>
-        {% endif %}
+        </div>
         {% block blog %}
         {% endblock blog %}
     </body>

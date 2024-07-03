@@ -5,11 +5,11 @@
 }
 
 :root {
-    --space-xs: 0.625rem;
-    --space-sm: 1.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 1.5rem;
     --space-md: 2.5rem;
-    --space-lg: 3.75rem;
-    --space-xl: 5rem;
+    --space-lg: 3.5rem;
+    --space-xl: 4.5rem;
 
     --color-background: #fff;
     --color-primary: #243342;
@@ -22,6 +22,11 @@ body {
     font-family: "IBM Plex Mono", monospace;
     background: var(--color-background);
     color: var(--color-secondary);
+}
+
+strong,
+b {
+    color: var(--color-primary);
 }
 
 h1,
@@ -78,11 +83,14 @@ a {
     color: var(--color-link);
 }
 
+.container {
+    max-width: calc(720px + var(--space-md));
+    padding: 0 var(--space-sm);
+}
+
 header,
 main,
 footer {
-    max-width: calc(720px + var(--space-md));
-    padding: 0 var(--space-sm);
     margin: var(--space-xl) auto;
 }
 
@@ -218,15 +226,10 @@ header > div ul {
 }
 
 .top-bar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: var(--color-primary);
-    color: var(--color-background);
-    padding: var(--space-sm);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     display: flex;
     justify-content: space-between;
+    margin: var(--space-xl) auto;
 
     a {
         color: inherit;
@@ -240,9 +243,8 @@ header > div ul {
     }
 }
 
-.site-title {
-    color: #fff;
-    font-family: "Playwrite MX";
+.logo {
+    color: var(--color-primary);
 }
 
 #id_title {
@@ -261,7 +263,7 @@ header > div ul {
 
 @media only screen and (max-width: 480px) {
     html {
-        font-size: 14px;
+        font-size: 0.9rem;
     }
 
     header {
@@ -270,5 +272,10 @@ header > div ul {
 
     .top-bar {
         padding: var(--space-sm);
+        margin: var(--space-xs) auto;
+
+        a {
+            margin-right: var(--space-sm);
+        }
     }
 }
