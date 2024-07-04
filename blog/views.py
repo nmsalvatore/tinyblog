@@ -14,7 +14,7 @@ def post_list_view(request, path):
 
     blog = Blog.objects.get(path=path)
     blogs = Blog.objects.all()
-    posts = blog.posts.all()
+    posts = blog.posts.all().order_by("created_on")
     context = {"blogs": blogs, "blog": blog, "posts": posts}
     return render(request, "blog/post_list.html", context)
 
