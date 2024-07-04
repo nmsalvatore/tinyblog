@@ -239,10 +239,11 @@ header > div ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     background: var(--color-primary);
     color: white;
     padding: 0 var(--space-sm);
+    z-index: 100;
 
     .logo {
         color: inherit;
