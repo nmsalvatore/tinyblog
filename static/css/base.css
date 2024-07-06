@@ -6,10 +6,10 @@
 
 :root {
     --space-xs: 0.5rem;
-    --space-sm: 1.5rem;
-    --space-md: 2.5rem;
-    --space-lg: 3.5rem;
-    --space-xl: 4.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
 
     --color-background: #fff;
     --color-primary: #243342;
@@ -80,7 +80,6 @@ article .content > p:last-child {
 }
 
 a {
-    text-decoration: none;
     color: var(--color-link);
 }
 
@@ -92,7 +91,7 @@ a {
 header,
 main,
 footer {
-    margin: var(--space-xl) auto;
+    margin: var(--space-lg) auto;
 }
 
 header {
@@ -100,10 +99,11 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    div > .blog-name {
+    a.blog-name {
         font-weight: 700;
         font-size: 1.25rem;
         color: var(--color-primary);
+        text-decoration: none;
     }
 
     nav > a {
@@ -124,6 +124,10 @@ header {
         font-weight: inherit;
         border: none;
         border-radius: 0.25rem;
+    }
+
+    .new-post.btn {
+        text-decoration: none;
     }
 }
 
@@ -166,8 +170,6 @@ blockquote {
 }
 
 ul {
-    line-height: 1.7;
-
     li {
         display: flex;
         justify-content: space-between;
@@ -178,7 +180,7 @@ ul {
     }
 
     li:not(.content li) {
-        margin-bottom: var(--space-xs);
+        margin-bottom: var(--space-sm);
     }
 }
 
