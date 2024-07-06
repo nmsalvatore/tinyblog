@@ -5,10 +5,10 @@
 {% endblock subtitle %}
 
 {% block blog_content %}
-    <ul>
+    <ul class="post-list">
         {% for post in posts %}
             <li>
-                <a href="{% url 'post_detail' slug=post.slug path=blog.path %}">{{ post.title }}</a>
+                <a href="{% url 'post_detail' slug=post.slug path=blog.path %}">{{ post.title|truncatechars:32 }}</a>
                 <span>{{ post.created_on|date:'m/d/Y' }}</span>
             </li>
         {% endfor %}
