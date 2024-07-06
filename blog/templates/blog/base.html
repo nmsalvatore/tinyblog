@@ -23,7 +23,7 @@
         <nav>
             <!-- <a href="{% url 'post_list' path=blog.path %}">All Posts</a> -->
             {% if user.is_authenticated and user == blog.author %}
-                <a class="btn" href="{% url 'post_new' path=blog.path %}">New Post</a>
+                <a class="new-post btn" href="{% url 'post_new' path=blog.path %}">New Post</a>
             {% else %}
                 <a class="btn" href="/">Sign up</a>
             {% endif %}
